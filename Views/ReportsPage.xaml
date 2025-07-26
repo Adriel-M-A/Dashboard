@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Dashboard.Views.ReportsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Dashboard.Views">
+
+    <!-- Ejemplo de lista de informes -->
+    <Grid Padding="24">
+        <StackPanel Spacing="12">
+            <TextBlock
+        Text="Informes"
+        FontSize="24"
+        FontWeight="Bold"/>
+            <!-- Aquí podrás poner tu control de DataGrid, ListView, etc. -->
+            <TextBlock Text="(aquí irá la lista de reportes)" />
+        </StackPanel>
+    </Grid>
+</Page>

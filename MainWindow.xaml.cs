@@ -1,17 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using Dashboard.Views;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -26,6 +15,31 @@ namespace Dashboard
         public MainWindow()
         {
             InitializeComponent();
+
+            // Al iniciar, navegamos a HomePage
+            ContentFrame.Navigate(typeof(HomePage));
+
+            // Evento al cambiar selección en el menú
+            NavView.SelectionChanged += OnNavigationViewSelectionChanged;
+        }
+
+        private void OnNavigationViewSelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            if (args.SelectedItemContainer is NavigationViewItem item && item.Tag is string tag)
+            {
+                switch (tag)
+                {
+                    case "home":
+                        ContentFrame.Navigate(typeof(HomePage));
+                        break;
+                    case "reports":
+                        ContentFrame.Navigate(typeof(ReportsPage));
+                        break;
+                    case "settings":
+                        ContentFrame.Navigate(typeof(SettingsPage));
+                        break;
+                }
+            }
         }
     }
 }

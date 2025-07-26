@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Dashboard.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Dashboard.Views">
+
+    <!-- Ajustes de la aplicación -->
+    <Grid Padding="24">
+        <StackPanel Spacing="16">
+            <TextBlock
+        Text="Configuración"
+        FontSize="24"
+        FontWeight="Bold"/>
+            <ToggleSwitch
+        x:Name="ThemeToggle"
+        Header="Modo Oscuro"
+        Toggled="ThemeToggle_Toggled"/>
+        </StackPanel>
+    </Grid>
+</Page>
