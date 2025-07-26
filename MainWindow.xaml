@@ -14,6 +14,24 @@
     </Window.SystemBackdrop>
 
     <Grid>
+        <!-- NavigationView engloba el panel lateral y el área de contenido -->
+        <NavigationView 
+            x:Name="NavView" 
+            PaneDisplayMode="Left" 
+            IsBackButtonVisible="Collapsed" 
+            IsSettingsVisible="True"
+            OpenPaneLength="200">
 
+            <!-- Items del menú principal -->
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Home" Icon="Home" Tag="home"/>
+                <NavigationViewItem Content="Reports" Icon="Document" Tag="reports"/>
+                <NavigationViewItem Content="Settings" Icon="Setting" Tag="settings"/>
+            </NavigationView.MenuItems>
+
+            <!-- Área donde mostraremos las páginas -->
+            <Frame x:Name="ContentFrame"/>
+        </NavigationView>
     </Grid>
+
 </Window>
